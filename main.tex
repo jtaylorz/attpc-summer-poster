@@ -82,7 +82,6 @@ boxshade=plain
 %----------------------------------------------------------------------------------------
 \headerbox{Abstract}{name=abstract,column=0,row=0, span=3}{
 \small{Data-analysis software for the Active-Target Time Projection Chamber (AT-TPC) at the National Superconducting Cyclotron Laboratory (NSCL) was documented and used to analyze unbound states in Argon-40 ($^{40}$Ar). NSCL is a national user facility funded by the National Science Foundation that provides rare isotope beams to researchers around the world to study cutting-edge nuclear physics phenomena. Rare isotope beams are produced, accelerated, and delivered to various experimental setups, each with their own physics motivations. One such setup is the AT-TPC, a gas-filled detector that acts as both the detector and target for high-efficiency detection of low-intensity, exotic nuclear reactions. The pytpc framework is a Python package for analyzing AT-TPC data and was developed for the analysis of $^{46}$Ar(p, p) data. The existing software was used to analyze data produced by the $^{40}$Ar(p, p) experiment that ran in August, 2015. Usage of the package was documented in an analysis manual both to improve analysis steps and aid in the work of future AT-TPC users. Software features and analysis methods in the pytpc framework will be presented along with the $^{40}$Ar results.
-
 }
 }
 %----------------------------------------------------------------------------------------
@@ -102,9 +101,10 @@ boxshade=plain
 
 }
 %----------------------------------------------------------------------------------------
-%	CALIBRATION
+%	Motivation
 %----------------------------------------------------------------------------------------
-\headerbox{KuPol Instrument Calibration}{name=calibration,column=0,row=1,below=abstract}
+\headerbox{Motivation}
+{name=calibration,column=0,row=1,below=abstract}
 {\small{The calibration is achieved by measuring the isolation parameter, $\alpha$, at different angles.}
 \begin{center}
 \includegraphics [height=34mm, width=70mm] {Final_alpha_20170118.png}
@@ -112,25 +112,6 @@ boxshade=plain
 \small{\textbf{Figure 2.} Plot comparing before/after $\alpha$ for 2016-01-18 Digital Model Calibration.\\
 For the calibration procedure, we take spectra of quantities derived from voltages in each bin after the FFT with the noise diode on, and then with the noise diode off. We use this data to adjust for the varying gain and phase of the four RF chains, and hence calibrate the receiver output. The calibration procedure instrument is a three-step process, requiring three different firing of the noise diode, each with their own set of calculations.\\
 \textbf{1. Gain Correction.} We calculate the gain correction for each RF channel. We assume that the noise diode injects a flat spectrum, and calculate the gain correction coefficients $B_{j}$ for $j=1...4$.}
-\begin{equation}
-B_{j}^2 = \frac{1}{|V_{j}|^2[on]-|V_{j}|^2[off]}
-\end{equation}
-\small{We can now apply the $B_{j}$ to form the gain-corrected voltages:}
-\begin{equation}
-V_{cj} = B_{j}V_{j}
-\end{equation}
-\small{\textbf{2. Left/Right Phase Correction.} We work out the phase difference between the two LCP chains, and two RCP chains. We use again the difference of the noise diode on/off powers to get at the phase difference we are after. Doing the algebra, we find}
-\begin{equation}
-cos(\theta_{L}) = \frac{\Delta|L_{A}|^2-\Delta|L_{B}|^2}{\Delta|L_{A}|^2+\Delta|L_{B}|^2}
-\end{equation}
-\begin{equation}
-cos(\theta_{R})=\frac{\Delta|R_{A}|^2-\Delta|R_{B}|^2}{\Delta|R_{A}|^2+\Delta|R_{B}|^2}
-\end{equation}
-\small{where $A$ and $B$ are the KuPol horns.\\
-\textbf{3. Polarization Angle Correction.} We need to correct for the phase difference between the left channels and the right channels. We use the fact the noise diode, because it is injected with equal phase and amplitude into the left and right channels of horn A, is a pure Stokes $Q$ signal, $I=Q=T_{NA}$, and $U=V=0$. Taking the difference of the noise diode on and off spectra, we obtain the phase difference between the left and right channels:}
-\begin{equation}
-\theta_{p}=\tan^{-1}\left(\frac{\Delta U_{m}}{\Delta Q_{m}}\right)
-\end{equation}
 }
 %----------------------------------------------------------------------------------------
 %	40AR ANALYSIS
@@ -156,9 +137,9 @@ The next step to determine the PSD, is to calculate the Fourier Transform of the
 }
 
 %----------------------------------------------------------------------------------------
-%	CONCLUSION
+%	CONCLUSION - FUTURE
 %----------------------------------------------------------------------------------------
-\headerbox{Conclusion}{name=conclusion,column=1,below=receiver,span=2}
+\headerbox{Conclusion and Future Work}{name=conclusion,column=1,below=receiver,span=2}
 {\small{ With the PSD analysis and by looking for correlations in the variability, we hope to better understand the emission mechanisms at the hearts of Active Galactic Nuclei. The work is under development and we are in search of the best method to estimate the PSD. On the other hand we have presented and defined the KuPol calibration method. From this in the coming weeks we will obtain calibration results of the 40m receiver. }
 }
 %----------------------------------------------------------------------------------------
@@ -168,9 +149,9 @@ The next step to determine the PSD, is to calculate the Fourier Transform of the
 
 %}
 %----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
+%	PYTPC
 %----------------------------------------------------------------------------------------
-\headerbox{Acknowledgements}{name=acknowledgements,column=0,row=2,below=calibration, above=bottom}{\small{The OVRO 40m Telescope Fermi Blazar Monitoring Program is supported by NASA under awards NNX08AW31G and NNX11A043G, and by the NSF under awards AST-0808050 and AST-1109911.}
+\headerbox{The pytpc Framework}{name=acknowledgements,column=0,row=2,below=calibration, above=bottom}{\small{The OVRO 40m Telescope Fermi Blazar Monitoring Program is supported by NASA under awards NNX08AW31G and NNX11A043G, and by the NSF under awards AST-0808050 and AST-1109911.}
 } 
 \end{poster}
 \end{document}
