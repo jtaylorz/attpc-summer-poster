@@ -34,21 +34,24 @@
 
 \graphicspath{{figures/}} % Directory in which figures are stored
 
- \definecolor{bordercol}{RGB}{40,40,40} % Border color of content boxes
- \definecolor{headercol1}{RGB}{186,215,230} % Background color for the header in the content boxes (left side)
- \definecolor{headercol2}{RGB}{120,120,120} % Background color for the header in the content boxes (right side)
- \definecolor{headerfontcol}{RGB}{0,0,0} % Text color for the header text in the content boxes
- \definecolor{boxcolor}{RGB}{210,235,250} % Background color for the content in the content boxes
+ %\definecolor{bordercol}{RGB}{40,40,40} % Border color of content boxes
+ \definecolor{bordercol}{RGB}{186,215,230} % Border color of content boxes
 
+ \definecolor{headercol1}{RGB}{0,102,51} % Background color for the header in the content boxes (left side)
+\definecolor{headercol2}{RGB}{0,102,51} 
+% \definecolor{headercol2}{RGB}{120,120,120} % Background color for the header in the content boxes (right side)
+ \definecolor{headerfontcol}{RGB}{256,256,256} % Text color for the header text in the content boxes
+ %\definecolor{boxcolor}{RGB}{210,235,250} % Background color for the content in the content boxes
+\definecolor{boxcolor}{RGB}{250,250,250}
 
 \begin{document}
-
-\background{ % Set the background to an image (background.pdf)
-\begin{tikzpicture}[remember picture,overlay]
-\draw (current page.north west)+(-2em,2em) node[anchor=north west]
-{\includegraphics[height=1.1\textheight]{background}};
-\end{tikzpicture}
-}
+\background{}
+%\background{ % Set the background to an image (background.pdf)
+%\begin{tikzpicture}[remember picture,overlay]
+%\draw (current page.north west)+(-2em,2em) node[anchor=north west]
+%{\includegraphics[height=1.1\textheight]{background}};
+%\end{tikzpicture}
+%}
 
 \begin{poster}{
 grid=false,
@@ -91,9 +94,9 @@ boxshade=plain
 {\small{KuPol is contributing to estimate the location for the high energy emission on these AGNs and to study potential spectral fluctuations that may arise during the flaring events. The uncertainty on the degree of correlation between different energies reduces when the data span for long periods and is rich in sampling, hence the rationale for this program and we therefore advocate for similar observing modes at other frequencies.}
 %\begin{wrapfigure}{l}{60mm}
 \begin{center}
-\includegraphics [height=36mm, width=60mm]{michigan_trip.jpg} %[height=36mm, width=60mm] {michigan_trip.jpg}
+\includegraphics [height=30mm]{michigan_trip.jpg} %[height=36mm, width=60mm] {michigan_trip.jpg}
 \hspace{0.2cm}
-\includegraphics [height=36mm, width=60mm] {attpc.png}
+\includegraphics [height=30mm] {attpc.png}
 \end{center}
 \textbf{Figure 1.} Left side, diagram analog instrument. Right side, diagram digital instrument.\\
 %\end{wrapfigure}
