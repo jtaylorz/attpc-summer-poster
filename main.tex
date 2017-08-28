@@ -90,7 +90,7 @@ boxshade=plain
 %----------------------------------------------------------------------------------------
 %	THE AT-TPC
 %----------------------------------------------------------------------------------------
-\headerbox{The Active-Target Time Projection Chamber}{name=instruments,column=1,row=1,span=2,below=abstract}
+\headerbox{The Active-Target Time Projection Chamber}{name=attpc,column=1,row=1,span=2,below=abstract}
 {\small{KuPol is contributing to estimate the location for the high energy emission on these AGNs and to study potential spectral fluctuations that may arise during the flaring events. The uncertainty on the degree of correlation between different energies reduces when the data span for long periods and is rich in sampling, hence the rationale for this program and we therefore advocate for similar observing modes at other frequencies.}
 %\begin{wrapfigure}{l}{60mm}
 \begin{center}
@@ -107,7 +107,7 @@ boxshade=plain
 %	Motivation
 %----------------------------------------------------------------------------------------
 \headerbox{Motivation}
-{name=calibration,column=0,row=1,below=abstract}
+{name=motivation,column=0,row=1,below=abstract}
 {\small{The calibration is achieved by measuring the isolation parameter, $\alpha$, at different angles.}
 \small{\textbf{Figure 2.} Plot comparing before/after $\alpha$ for 2016-01-18 Digital Model Calibration.\\
 For the calibration procedure, we take spectra of quantities derived from voltages in each bin after the FFT with the noise diode on, and then with the noise diode off. We use this data to adjust for the varying gain and phase of the four RF chains, and hence calibrate the receiver output. The calibration procedure instrument is a three-step process, requiring three different firing of the noise diode, each with their own set of calculations.\\
@@ -116,7 +116,7 @@ For the calibration procedure, we take spectra of quantities derived from voltag
 %----------------------------------------------------------------------------------------
 %	40AR ANALYSIS
 %----------------------------------------------------------------------------------------
-\headerbox{Analysis of the $^{40}$Ar Beam Experiment Data}{name=receiver,span=2,column=1,row=1, below=instruments}{
+\headerbox{Analysis of the $^{40}$Ar Beam Experiment Data}{name=analysis,span=2,column=1,row=1, below=attpc}{
 \small{The Power Spectral Density (PSD) of a signal is the spectral decomposition of a signal into different frequency components, as a function of power at each frequency bin.\\
 The PSD is usually estimated by means of an FFT, and it can be used to characterize the time variability of the blazar flux. The analysis requires regularity in the signal sampling, which is seldom the case. The PSD can also be estimated by a periodogram, which is the convolution between a window function and the signal. We are trying Blackman-Harris window function in order to minimize the spectral sidelobes introduced in the analysis.}
 \begin{center}
@@ -139,26 +139,25 @@ The next step to determine the PSD, is to calculate the Fourier Transform of the
 %----------------------------------------------------------------------------------------
 %	CONCLUSION - FUTURE
 %----------------------------------------------------------------------------------------
-\headerbox{Conclusion and Future Work}{name=conclusion,column=1,below=receiver,span=2}
+\headerbox{Conclusion and Future Work}{name=conclusion,column=1,below=analysis,span=2}
 {\small{ With the PSD analysis and by looking for correlations in the variability, we hope to better understand the emission mechanisms at the hearts of Active Galactic Nuclei. The work is under development and we are in search of the best method to estimate the PSD. On the other hand we have presented and defined the KuPol calibration method. From this in the coming weeks we will obtain calibration results of the 40m receiver. }
 }
 %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
-%\headerbox{References}{name=references,column=1,below=conclusion,span=2}{
+\headerbox{References}{name=references,column=0,above=bottom,span=1}{
 
-%}
+}
 %----------------------------------------------------------------------------------------
 %	PYTPC
 %----------------------------------------------------------------------------------------
-\headerbox{The pytpc Framework}{name=acknowledgements,column=0,row=2,below=calibration, above=bottom}{\small{The OVRO 40m Telescope Fermi Blazar Monitoring Program is supported by NASA under awards NNX08AW31G and NNX11A043G, and by the NSF under awards AST-0808050 and AST-1109911.
+\headerbox{The pytpc Framework}{name=pytpc,column=0,row=2,below=motivation, above=references}{\small{The OVRO 40m Telescope Fermi Blazar Monitoring Program is supported by NASA under awards NNX08AW31G and NNX11A043G, and by the NSF under awards AST-0808050 and AST-1109911.
 \begin{center}
 \includegraphics[scale=0.15]{chamber_plot.png}
 \end{center}
 \small{\textbf{Figure 100.} An example of a proton track event in the AT-TPC chamber from the $^{40}$Ar experiment.}\\
-
-
 }
 } 
+
 \end{poster}
 \end{document}
