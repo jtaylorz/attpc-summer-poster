@@ -91,16 +91,15 @@ boxshade=plain
 %	THE AT-TPC
 %----------------------------------------------------------------------------------------
 \headerbox{The Active-Target Time Projection Chamber}{name=attpc,column=1,row=1,span=2,below=abstract}
-{\small{KuPol is contributing to estimate the location for the high energy emission on these AGNs and to study potential spectral fluctuations that may arise during the flaring events. The uncertainty on the degree of correlation between different energies reduces when the data span for long periods and is rich in sampling, hence the rationale for this program and we therefore advocate for similar observing modes at other frequencies.}
-%\begin{wrapfigure}{l}{60mm}
+{\small{The AT-TPC is a gas-filled detector that acts as both the detector and target for high-efficiency detection of low-intensity, exotic nuclear reactions. Because the gas target also acts as the detector, the AT-TPC is highly efficient, providing nearly ${4\pi}$ angular coverage. The AT-TPC operates inside a nearly 2T solenoidal magnetic field. Reactions can be measured over a wide range of energies as the beam loses energy in the gas (CITE NIM article). In order to obtain this ${4\pi}$ coverage with high resolution, a highly segmented pad plane captures the detector signal. There are 10240 pads in the pad plane which produces on the order of 10MB of data per event.}
+
 \begin{center}
 \includegraphics [height=30mm]{michigan_trip.jpg} %[height=36mm, width=60mm] {michigan_trip.jpg}
 \hspace{0.2cm}
 \includegraphics [height=30mm] {attpc.png}
 \end{center}
-\textbf{Figure 1.} Left side, diagram analog instrument. Right side, diagram digital instrument.\\
-%\end{wrapfigure}
-\small{The KuPol instrument is a dual-beam receiver for the 40m telescope at OVRO. It is, in fact, a hybrid of two separate instruments called the analog and the digital instrument. The \textbf{Analog Instrument} is a dual-polarization, beam-differencing radiometer that is designed to produce identical data to the previous Ku-band, instrument that KuPol replaces. It is composed by the Cryostat, the Cold Plate, and UBE. The \textbf{Digital Instrument} is a digital spectropolarimeter that processes the band between 13 to 18 GHz in 500 MHz wide chunks with ∼8 MHz resolution. In this instrument is performed the signal distribution, downconversion, digitization and processing, and data readout and archiving.}
+
+\small{\textbf{Figure 1.} Schematic of the AT-TPC. The rare isotope beam enters the the detector through the right-hand side of the detector and moves left towards the sensor plane}
 
 }
 %----------------------------------------------------------------------------------------
@@ -108,24 +107,21 @@ boxshade=plain
 %----------------------------------------------------------------------------------------
 \headerbox{Motivation}
 {name=motivation,column=0,row=1,below=abstract}
-{\small{The calibration is achieved by measuring the isolation parameter, $\alpha$, at different angles.}
-\small{\textbf{Figure 2.} Plot comparing before/after $\alpha$ for 2016-01-18 Digital Model Calibration.\\
-For the calibration procedure, we take spectra of quantities derived from voltages in each bin after the FFT with the noise diode on, and then with the noise diode off. We use this data to adjust for the varying gain and phase of the four RF chains, and hence calibrate the receiver output. The calibration procedure instrument is a three-step process, requiring three different firing of the noise diode, each with their own set of calculations.\\
-\textbf{1. Gain Correction.} We calculate the gain correction for each RF channel. We assume that the noise diode injects a flat spectrum, and calculate the gain correction coefficients $B_{j}$ for $j=1...4$.}
-}
+{\small{Nuclear science and the subfield of nuclear structure and reactions has applications ranging far beyond the quest for universal discovery, from national security to medicine. With the goal of expanding our current understanding of the nuclear landscape, the study of rare isotopes is imperative in investigation of theoretical models such as quantum chromodynamics and the Standard Model. Experimental endeavors using low-intensity beams of radioactive ions introduce unique challenges in experimental design and analysis. Rare isotope beams typically have low intensity due to production constraints, leading to fewer reactions and events, thus requiring a detector with high efficiency. The AT-TPC was conceived, designed, and built for improved data acquisition for rare isotope experiments. 
+The pytpc framework, a Python package for analyzing AT-TPC data, was documented in an analysis manual to streamline the analysis process for future users and increase the accessability of the software. By nature of being written in Python, the pytpc package is a more accessible alternative to the pre-existing AT-TPC data analysis package written using CERN's ROOT library. }}
 %----------------------------------------------------------------------------------------
 %	40AR ANALYSIS
 %----------------------------------------------------------------------------------------
-\headerbox{Analysis of the $^{40}$Ar Beam Experiment Data}{name=analysis,span=2,column=1,row=1, below=attpc}{
-\small{The Power Spectral Density (PSD) of a signal is the spectral decomposition of a signal into different frequency components, as a function of power at each frequency bin.\\
-The PSD is usually estimated by means of an FFT, and it can be used to characterize the time variability of the blazar flux. The analysis requires regularity in the signal sampling, which is seldom the case. The PSD can also be estimated by a periodogram, which is the convolution between a window function and the signal. We are trying Blackman-Harris window function in order to minimize the spectral sidelobes introduced in the analysis.}
+\headerbox{Analysis of the $^{40}$Ar Beam Experiment Data}{name=analysis,span=2,column=1,row=1, below=attpc}
+{\small{The analysis code, originally written for a $^{46}$Ar data, was applied to data from the $^{40}$Ar(p, p) experiment that ran at the NSCL in August,  2015. Once the data from an experiment has been fit, there is enough information to reconstruct the energy of the projectile (in this case $^{40}$Ar) at the vertex of the reaction in two different ways.}
+
+\small{The Monte Carlo fit results provide the \textbf{vertex position} of a reaction in the detector chamber. The energy of the beam particle at this location can be found by calculating the energy lost by the particle to the gas target that fills the chamber. The vertex energy can also be reconstructed through \textbf{kinematics} using the initial energy and scattering angle of the recoil particle which are obtained in the fitting process. The results from analysis of $^{40}$Ar data are limited by a smaller dataset due to the magnetic field only being used for about half the experiment.}
 \begin{center}
 \includegraphics [height=20mm, width=50mm] {curvaJ1415.jpg}
 \hspace{.5cm}
 \includegraphics [height=20mm, width=50mm] {curvaJ1653.jpg}
 \end{center}
-\small{\textbf{Figure 3.} The first and second plot correspond the sources of J1415+1320 and J1653+3945, respectively, observed by the OVRO program.}\\
-The next step to determine the PSD, is to calculate the Fourier Transform of the window function and the curve separately and convolve, which is analogous to convolve the signal with the window function and apply Transform.
+\small{\textbf{Figure 3.} Unnormalized excitations functions as a function of the $^{40}$Ar vertex energy in the laboratory frame shown for multiple center-of-mass scattering angles ($\theta_{cm}$). Ideally there would be better statistics for higher $\theta_{cm}$ but this was not possible due to the limited dataset.}
 \begin{center}
 \includegraphics [height=30mm, width=43mm] {BH.pdf}
 \hspace{.3cm}
@@ -140,24 +136,23 @@ The next step to determine the PSD, is to calculate the Fourier Transform of the
 %	CONCLUSION - FUTURE
 %----------------------------------------------------------------------------------------
 \headerbox{Conclusion and Future Work}{name=conclusion,column=1,below=analysis,span=2}
-{\small{ With the PSD analysis and by looking for correlations in the variability, we hope to better understand the emission mechanisms at the hearts of Active Galactic Nuclei. The work is under development and we are in search of the best method to estimate the PSD. On the other hand we have presented and defined the KuPol calibration method. From this in the coming weeks we will obtain calibration results of the 40m receiver. }
+{\small{ By analyzing the data from the $^{40}$Ar experiment I gained firsthand experience with the software I was documenting, examined data that was previously unused, and tested the adaptability of the software. The analysis manual for the pytpc framework will help experimentalists from around the world apply pytpc data produced by their own AT-TPC experiments.
+
+I will be continuing my work with AT-TPC data and the analysis process this semester in a more research-focused capacity. My current research will explore and apply machine learning methods to the issue of event classification of AT-TPC data. Ideally this will allow AT-TPC users to filter out undesired evens and analyze only those that are of interest to them in their experiments. }
 }
 %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
 \headerbox{References}{name=references,column=0,above=bottom,span=1}{
-
+%\bibliographystyle{unsrt}
+\bibliography{bibliography.bib}
 }
 %----------------------------------------------------------------------------------------
 %	PYTPC
 %----------------------------------------------------------------------------------------
-\headerbox{The pytpc Framework}{name=pytpc,column=0,row=2,below=motivation, above=references}{\small{The OVRO 40m Telescope Fermi Blazar Monitoring Program is supported by NASA under awards NNX08AW31G and NNX11A043G, and by the NSF under awards AST-0808050 and AST-1109911.
-\begin{center}
-\includegraphics[scale=0.15]{chamber_plot.png}
-\end{center}
-\small{\textbf{Figure 100.} An example of a proton track event in the AT-TPC chamber from the $^{40}$Ar experiment.}\\
-}
-} 
+\headerbox{The pytpc Framework}{name=pytpc,column=0,row=2,below=motivation, above=references}{\small{Extracting meaningful physics results from AT-TPC data entails a multi-step process. The package provides functions for reconstructing, cleaning, and fitting particle tracks produced by beam experiments run on the AT-TPC. Specifically, the process involves the following steps that are implemented in a set of scripts.\begin{enumerate}\item Baseline Correction for Electronics Signals\item Track Reconstruction\item Removal of Noise Using a Hough Transform\item Modeling and Fitting Tracks with a Monte Carlo Optimizer
+\end{enumerate}
+}} 
 
 \end{poster}
 \end{document}
