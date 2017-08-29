@@ -46,12 +46,6 @@
 
 \begin{document}
 \background{}
-%\background{ % Set the background to an image (background.pdf)
-%\begin{tikzpicture}[remember picture,overlay]
-%\draw (current page.north west)+(-2em,2em) node[anchor=north west]
-%{\includegraphics[height=1.1\textheight]{background}};
-%\end{tikzpicture}
-%}
 
 \begin{poster}{
 grid=false,
@@ -91,7 +85,9 @@ boxshade=plain
 %	THE AT-TPC
 %----------------------------------------------------------------------------------------
 \headerbox{The Active-Target Time Projection Chamber}{name=attpc,column=1,row=1,span=2,below=abstract}
-{\small{The AT-TPC is a gas-filled detector that acts as both the detector and target for high-efficiency detection of low-intensity, exotic nuclear reactions. Because the gas target also acts as the detector, the AT-TPC is highly efficient, providing nearly ${4\pi}$ angular coverage. The AT-TPC operates inside a nearly 2T solenoidal magnetic field. Reactions can be measured over a wide range of energies as the beam loses energy in the gas (CITE NIM article). In order to obtain this ${4\pi}$ coverage with high resolution, a highly segmented pad plane captures the detector signal. There are 10240 pads in the pad plane which produces on the order of 10MB of data per event.}
+{\small{The AT-TPC is a gas-filled detector that acts as both the detector and target for high-efficiency detection of low-intensity, exotic nuclear reactions. Because the gas target also acts as the detector, the AT-TPC is highly efficient, providing nearly ${4\pi}$ angular coverage. The AT-TPC operates inside a nearly 2T solenoidal magnetic field. Reactions can be measured over a wide range of energies as the beam loses energy in the gas.
+%\cite{ATTPC-NIM}
+In order to obtain this ${4\pi}$ coverage with high resolution, a highly segmented pad plane captures the detector signal. There are 10240 pads in the pad plane which produces on the order of 10MB of data per event.}
 
 \begin{center}
 \includegraphics [height=30mm]{michigan_trip.jpg} %[height=36mm, width=60mm] {michigan_trip.jpg}
@@ -99,7 +95,9 @@ boxshade=plain
 \includegraphics [height=30mm] {attpc.png}
 \end{center}
 
-\small{\textbf{Figure 1.} Schematic of the AT-TPC. The rare isotope beam enters the the detector through the right-hand side of the detector and moves left towards the sensor plane}
+\small{\textbf{Figure 1.}
+%\cite{Bradt-thesis} 
+Right side, schematic of the AT-TPC. The rare isotope beam enters the the detector through the right-hand side of the detector and moves left towards the sensor plane}
 
 }
 %----------------------------------------------------------------------------------------
@@ -108,7 +106,9 @@ boxshade=plain
 \headerbox{Motivation}
 {name=motivation,column=0,row=1,below=abstract}
 {\small{Nuclear science and the subfield of nuclear structure and reactions has applications ranging far beyond the quest for universal discovery, from national security to medicine. With the goal of expanding our current understanding of the nuclear landscape, the study of rare isotopes is imperative in investigation of theoretical models such as quantum chromodynamics and the Standard Model. Experimental endeavors using low-intensity beams of radioactive ions introduce unique challenges in experimental design and analysis. Rare isotope beams typically have low intensity due to production constraints, leading to fewer reactions and events, thus requiring a detector with high efficiency. The AT-TPC was conceived, designed, and built for improved data acquisition for rare isotope experiments. 
-The pytpc framework, a Python package for analyzing AT-TPC data, was documented in an analysis manual to streamline the analysis process for future users and increase the accessability of the software. By nature of being written in Python, the pytpc package is a more accessible alternative to the pre-existing AT-TPC data analysis package written using CERN's ROOT library. }}
+
+The pytpc framework, a Python package for analyzing AT-TPC data, was documented in an analysis manual to streamline the analysis process for future users and increase the accessability of the software. By nature of being written in Python, the pytpc package is a more accessible alternative to the pre-existing AT-TPC data analysis package written using CERN's ROOT library. }
+}
 %----------------------------------------------------------------------------------------
 %	40AR ANALYSIS
 %----------------------------------------------------------------------------------------
@@ -117,19 +117,17 @@ boxshade=plain
 
 \small{The Monte Carlo fit results provide the \textbf{vertex position} of a reaction in the detector chamber. The energy of the beam particle at this location can be found by calculating the energy lost by the particle to the gas target that fills the chamber. The vertex energy can also be reconstructed through \textbf{kinematics} using the initial energy and scattering angle of the recoil particle which are obtained in the fitting process. The results from analysis of $^{40}$Ar data are limited by a smaller dataset due to the magnetic field only being used for about half the experiment.}
 \begin{center}
-\includegraphics [height=20mm, width=50mm] {curvaJ1415.jpg}
-\hspace{.5cm}
-\includegraphics [height=20mm, width=50mm] {curvaJ1653.jpg}
+\includegraphics [width=100mm] {angular_excitation_hists_POSTER.pdf}
 \end{center}
-\small{\textbf{Figure 3.} Unnormalized excitations functions as a function of the $^{40}$Ar vertex energy in the laboratory frame shown for multiple center-of-mass scattering angles ($\theta_{cm}$). Ideally there would be better statistics for higher $\theta_{cm}$ but this was not possible due to the limited dataset.}
+\small{\textbf{Figure 4.} Unnormalized excitations functions as a function of the $^{40}$Ar vertex energy in the laboratory frame shown for multiple center-of-mass scattering angles ($\theta_{cm}$). Ideally there would be better statistics for higher $\theta_{cm}$ but this was not possible due to the limited dataset.}
 \begin{center}
-\includegraphics [height=30mm, width=43mm] {BH.pdf}
-\hspace{.3cm}
-\includegraphics [height=30mm, width=48mm] {FFTBH.pdf}
-\hspace{.3cm}
-\includegraphics [height=30mm, width=43mm] {FFTcurva_2.pdf}
+\includegraphics [height=30mm, width=43mm] {vertex_pos_distrib.pdf}
+\hspace{.5cm}
+\includegraphics [height=30mm, width=43mm] {vertex_en_error.pdf}
 \end{center}
-\small{\textbf{Figure 4.} The first and second plot correspond the  Blackman-Harris window function, without FFT and with FFT, respectively. The third plot is FFT of light curve J1653+3945, calculated exclusively by Lomb-Scargle periodogram.}
+\small{\textbf{Figure 5.} Left side, distribution of vertex positions in the plane transverse to the detector.}
+
+\small{\textbf{Figure 6.} Right side, difference between the vertex energy as calculated from kinematics and vertex position. The trend of the count away from 0 on the x-axis is indicative of a problem with the vertex energy calculated from kinematics.}
 }
 
 %----------------------------------------------------------------------------------------
@@ -138,21 +136,45 @@ boxshade=plain
 \headerbox{Conclusion and Future Work}{name=conclusion,column=1,below=analysis,span=2}
 {\small{ By analyzing the data from the $^{40}$Ar experiment I gained firsthand experience with the software I was documenting, examined data that was previously unused, and tested the adaptability of the software. The analysis manual for the pytpc framework will help experimentalists from around the world apply pytpc data produced by their own AT-TPC experiments.
 
-I will be continuing my work with AT-TPC data and the analysis process this semester in a more research-focused capacity. My current research will explore and apply machine learning methods to the issue of event classification of AT-TPC data. Ideally this will allow AT-TPC users to filter out undesired evens and analyze only those that are of interest to them in their experiments. }
+
+I will be continuing my work with AT-TPC data and the analysis process this semester in a more research-focused capacity. My current research will explore and apply machine learning methods to the issue of event classification of AT-TPC data. Ideally this will allow AT-TPC users to filter out undesired evens and analyze only those that are of interest to them in their experiments. }
 }
 %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
-\headerbox{References}{name=references,column=0,above=bottom,span=1}{
+%\headerbox{References}{name=references,column=0,above=bottom,span=1}{
 %\bibliographystyle{unsrt}
-\bibliography{bibliography.bib}
-}
+%\bibliography{bibliography.bib}
+%}
 %----------------------------------------------------------------------------------------
 %	PYTPC
 %----------------------------------------------------------------------------------------
-\headerbox{The pytpc Framework}{name=pytpc,column=0,row=2,below=motivation, above=references}{\small{Extracting meaningful physics results from AT-TPC data entails a multi-step process. The package provides functions for reconstructing, cleaning, and fitting particle tracks produced by beam experiments run on the AT-TPC. Specifically, the process involves the following steps that are implemented in a set of scripts.\begin{enumerate}\item Baseline Correction for Electronics Signals\item Track Reconstruction\item Removal of Noise Using a Hough Transform\item Modeling and Fitting Tracks with a Monte Carlo Optimizer
+\headerbox{The pytpc Framework}{name=pytpc,column=0,row=2,below=motivation, above=bottom}{\small{Extracting meaningful physics results from AT-TPC data entails a multi-step process. The package provides functions for reconstructing, cleaning, and fitting particle tracks produced by beam experiments run on the AT-TPC. Specifically, the process involves the following steps that are implemented in a set of scripts.
+
+\begin{center}
+\includegraphics[width=40mm]{chamber_plot.png}
+\end{center}
+
+\textbf{Figure 2.} An example $^{40}$Ar proton event in a vertically mounted chamber.
+
+\begin{enumerate}
+\item Baseline Correction for Electronics Signals
+\item Track Reconstruction
+\item Removal of Noise Using a Hough Transform
+\item Modeling and Fitting Tracks with a Monte Carlo Optimizer
 \end{enumerate}
-}} 
+
+\begin{center}
+\includegraphics [width=21mm] {preprocess_evt.pdf}
+\hspace{.3cm}
+\includegraphics [width=21mm] {clean_evt.pdf}
+\hspace{.3cm}
+\includegraphics [width=21mm] {fit_evt.pdf}
+\end{center}
+
+\textbf{Figure 3.} Run 102 Event 93. Left side, a preprocessed event showing all data points recorded. Center, event after Hough Transform cleaning. Right side, a fit event.}
+
+} 
 
 \end{poster}
 \end{document}
