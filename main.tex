@@ -116,18 +116,21 @@ The pytpc framework, a Python package for analyzing AT-TPC data, was documented 
 {\small{The analysis code, originally written for a $^{46}$Ar data, was applied to data from the $^{40}$Ar(p, p) experiment that ran at the NSCL in August,  2015. Once the data from an experiment has been fit, there is enough information to reconstruct the energy of the projectile (in this case $^{40}$Ar) at the vertex of the reaction in two different ways.}
 
 \small{The Monte Carlo fit results provide the \textbf{vertex position} of a reaction in the detector chamber. The energy of the beam particle at this location can be found by calculating the energy lost by the particle to the gas target that fills the chamber. The vertex energy can also be reconstructed through \textbf{kinematics} using the initial energy and scattering angle of the recoil particle which are obtained in the fitting process. The results from analysis of $^{40}$Ar data are limited by a smaller dataset due to the magnetic field only being used for about half the experiment.}
-\begin{center}
-\includegraphics [width=100mm] {angular_excitation_hists_POSTER.pdf}
-\end{center}
-\small{\textbf{Figure 4.} Unnormalized excitations functions as a function of the $^{40}$Ar vertex energy in the laboratory frame shown for multiple center-of-mass scattering angles ($\theta_{cm}$). Ideally there would be better statistics for higher $\theta_{cm}$ but this was not possible due to the limited dataset.}
+
 \begin{center}
 \includegraphics [height=30mm, width=43mm] {vertex_pos_distrib.pdf}
 \hspace{.5cm}
 \includegraphics [height=30mm, width=43mm] {vertex_en_error.pdf}
 \end{center}
-\small{\textbf{Figure 5.} Left side, distribution of vertex positions in the plane transverse to the detector.}
+\small{\textbf{Figure 4.} Left side, distribution of vertex positions in the plane transverse to the detector.}
 
-\small{\textbf{Figure 6.} Right side, difference between the vertex energy as calculated from kinematics and vertex position. The trend of the count away from 0 on the x-axis is indicative of a problem with the vertex energy calculated from kinematics.}
+\small{\textbf{Figure 5.} Right side, difference between the vertex energy as calculated from kinematics and vertex position. The trend of the count away from 0 on the x-axis is indicative of a problem with the vertex energy calculated from kinematics.}
+
+\begin{center}
+\includegraphics [width=100mm] {angular_excitation_hists_POSTER.pdf}
+\end{center}
+\small{\textbf{Figure 6.} Unnormalized excitations functions as a function of the $^{40}$Ar vertex energy in the laboratory frame shown for multiple center-of-mass scattering angles ($\theta_{cm}$). Ideally there would be better statistics for higher $\theta_{cm}$ but this was not possible due to the limited dataset.}
+
 }
 
 %----------------------------------------------------------------------------------------
@@ -149,13 +152,7 @@ I will be continuing my work with AT-TPC data and the analysis process this seme
 %----------------------------------------------------------------------------------------
 %	PYTPC
 %----------------------------------------------------------------------------------------
-\headerbox{The pytpc Framework}{name=pytpc,column=0,row=2,below=motivation, above=bottom}{\small{Extracting meaningful physics results from AT-TPC data entails a multi-step process. The package provides functions for reconstructing, cleaning, and fitting particle tracks produced by beam experiments run on the AT-TPC. Specifically, the process involves the following steps that are implemented in a set of scripts.
-
-\begin{center}
-\includegraphics[width=40mm]{chamber_plot.png}
-\end{center}
-
-\textbf{Figure 2.} An example $^{40}$Ar proton event in a vertically mounted chamber.
+\headerbox{The pytpc Framework}{name=pytpc,column=0,row=2,below=motivation, above=bottom}{\small{Extracting meaningful physics results from AT-TPC data entails a multi-step process. The package provides functions for reconstructing, cleaning, and fitting particle tracks produced by beam experiments run on the AT-TPC. Specifically, the process involves the following steps that are implemented in a set of scripts:
 
 \begin{enumerate}
 \item Baseline Correction for Electronics Signals
@@ -165,6 +162,12 @@ I will be continuing my work with AT-TPC data and the analysis process this seme
 \end{enumerate}
 
 \begin{center}
+\includegraphics[width=40mm]{chamber_plot.png}
+\end{center}
+
+\textbf{Figure 2.} An example $^{40}$Ar proton event in a vertically mounted chamber.
+
+\begin{center}
 \includegraphics [width=21mm] {preprocess_evt.pdf}
 \hspace{.3cm}
 \includegraphics [width=21mm] {clean_evt.pdf}
@@ -172,7 +175,7 @@ I will be continuing my work with AT-TPC data and the analysis process this seme
 \includegraphics [width=21mm] {fit_evt.pdf}
 \end{center}
 
-\textbf{Figure 3.} Run 102 Event 93. Left side, a preprocessed event showing all data points recorded. Center, event after Hough Transform cleaning. Right side, a fit event.}
+\textbf{Figure 3.} Run 102 Event 93. Left side, a preprocessed event showing all data points recorded. Center, event after Hough Transform cleaning. Right side, a fit event. Note the change to the detector coordinate system during cleaning.}
 
 } 
 
