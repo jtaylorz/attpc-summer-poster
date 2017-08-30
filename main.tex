@@ -35,7 +35,7 @@
 \graphicspath{{figures/}} % Directory in which figures are stored
 
  %\definecolor{bordercol}{RGB}{40,40,40} % Border color of content boxes
- \definecolor{bordercol}{RGB}{186,215,230} % Border color of content boxes
+ \definecolor{bordercol}{RGB}{211,211,211} % Border color of content boxes
 
  \definecolor{headercol1}{RGB}{0,102,51} % Background color for the header in the content boxes (left side)
 \definecolor{headercol2}{RGB}{0,102,51} 
@@ -44,7 +44,7 @@
  %\definecolor{boxcolor}{RGB}{210,235,250} % Background color for the content in the content boxes
 \definecolor{boxcolor}{RGB}{250,250,250}
 
-\renewcommand\refname{\vskip -1cm}
+\renewcommand\refname{\vskip -1.35cm}
 
 \begin{document}
 \background{}
@@ -80,7 +80,8 @@ boxshade=plain
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 \headerbox{Abstract}{name=abstract,column=0,row=0, span=3}{
-\small{Data-analysis software for the Active-Target Time Projection Chamber (AT-TPC) at the National Superconducting Cyclotron Laboratory (NSCL) was documented and used to analyze unbound states in Argon-40 ($^{40}$Ar). At NSCL, rare isotope beams are produced, accelerated, and delivered to various experimental setups, each with their own physics motivations. One such setup is the AT-TPC, a gas-filled detector that acts as both the detector and target for high-efficiency detection of low-intensity, exotic nuclear reactions. The pytpc framework is a Python package for analyzing AT-TPC data. The existing software was used to analyze data produced by the $^{40}$Ar(p, p) experiment. Usage of the package was documented in an analysis manual both to aid in the work of future AT-TPC users. Software features and analysis methods in the pytpc framework will be presented along with the $^{40}$Ar results.
+\small{Data-analysis software for the Active-Target Time Projection Chamber (AT-TPC) at the National Superconducting Cyclotron Laboratory (NSCL) was documented and used to analyze unbound states in Argon-40 ($^{40}$Ar). At NSCL, rare isotope beams are produced, accelerated, and delivered to various experimental setups, each with their own physics motivations. One such setup is the AT-TPC, a gas-filled detector that acts as both the detector and target for high-efficiency detection of low-intensity, exotic nuclear reactions. The pytpc framework is a Python package which was used to analyze data produced by the $^{40}$Ar(p, p) experiment. Usage of the package was documented in an analysis manual to aid in the work of future AT-TPC users. Software features and analysis methods in the pytpc framework are presented along with the $^{40}$Ar results.
+
 
 %Data-analysis software for the Active-Target Time Projection Chamber (AT-TPC) at the National Superconducting Cyclotron Laboratory (NSCL) was documented and used to analyze unbound states in Argon-40 ($^{40}$Ar). NSCL is a national user facility funded by the National Science Foundation that provides rare isotope beams to researchers around the world to study cutting-edge nuclear physics phenomena. Rare isotope beams are produced, accelerated, and delivered to various experimental setups, each with their own physics motivations. One such setup is the AT-TPC, a gas-filled detector that acts as both the detector and target for high-efficiency detection of low-intensity, exotic nuclear reactions. The pytpc framework is a Python package for analyzing AT-TPC data and was developed for the analysis of $^{46}$Ar(p, p) data. The existing software was used to analyze data produced by the $^{40}$Ar(p, p) experiment that ran in August, 2015. Usage of the package was documented in an analysis manual both to improve analysis steps and aid in the work of future AT-TPC users. Software features and analysis methods in the pytpc framework will be presented along with the $^{40}$Ar results.
 }
@@ -99,25 +100,25 @@ In order to obtain this ${4\pi}$ coverage with high resolution, a highly segment
 \end{center}
 
 
-\small{\textbf{Figure 2.} Left, a photograph of the pad plane end of the AT-TPC, shown mounted in the solenoid magnet.}
+\small{\textbf{Fig 2.} Left, a photograph of the pad plane end of the AT-TPC, shown mounted in the solenoid magnet.}
 
-\small{\textbf{Figure 3.} Right, this is a schematic of the AT-TPC with the outer shielding made transparent. The rare isotope beam enters the the detector on the right-hand side and moves left towards the sensor plane \cite{Bradt-thesis}.}
+\small{\textbf{Fig 3.} Right, a schematic of the AT-TPC with the outer shielding made transparent. The rare isotope beam enters the the detector on the right-hand side and moves left towards the sensor plane \cite{Bradt-thesis}.}
 
 }
 %----------------------------------------------------------------------------------------
 %	Motivation
 %----------------------------------------------------------------------------------------
 \headerbox{Motivation}
-{name=motivation,column=0,row=1,below=abstract}
+{name=motivation,column=0,row=1,span=1, below=abstract}
 {\small{The study of rare isotopes has applications ranging far beyond the quest for universal discovery, from national security to medicine. Experimental endeavors using low-intensity beams of radioactive ions introduce unique challenges in experimental design and analysis. Rare isotope beams typically have low intensity, leading to fewer reactions and events, thus requiring a detector with high efficiency. The AT-TPC was conceived, designed, and built for improved data acquisition for rare isotope experiments. 
 
 This project involved creating an analysis manual and framework documentation to streamline the analysis process for future users and increase the accessibility of the software as well as analyzing data from the $^{40}$Ar(p,p) reaction.}
 
 \begin{center}
-\includegraphics[width=30mm]{ar40_nucleus.png}
+\includegraphics[width=20mm]{ar40_nucleus.png}
 \end{center}
 
-\small{\textbf{Figure 1.} This is a diagram depicts an $^{40}$Ar nucleus.}
+\small{\textbf{Fig. 1.} A schematic diagram of an $^{40}$Ar nucleus, which has 18 protons (red) and 22 neutrons (blue).}
 }
 %----------------------------------------------------------------------------------------
 %	40AR ANALYSIS
@@ -134,16 +135,16 @@ This project involved creating an analysis manual and framework documentation to
 \includegraphics [height=30mm] {vertex_pos_distrib.pdf}
 \end{center}
 
-\small{\textbf{Figure 5.} Left, this is an example of a proton event rendered in the pytpc framework.}
+\small{\textbf{Fig 5.} Left, an example of a proton event rendered in the pytpc framework.}
 
-\small{\textbf{Figure 6.} Center, this histogram shows the distribution of $\chi_{pos}^{2}$ values. This component was cut at 14.}
+\small{\textbf{Fig 6.} Center, the distribution of $\chi_{pos}^{2}$ values. The position component was cut at 14 and events with larger values than this cut were discarded}
 
-\small{\textbf{Figure 7.} Right, this plot shows the distribution of vertex positions in the plane transverse to the detector.}
+\small{\textbf{Fig 7.} Right, overall distribution of vertex positions in the plane transverse to the detector.}
 
 \begin{center}
-\includegraphics [width=100mm] {angular_excitation_hists_POSTER.pdf}
+\includegraphics [width=104mm] {angular_excitation_hists_POSTER.pdf}
 \end{center}
-\small{\textbf{Figure 8.} Unnormalized excitations functions as a function of the $^{40}$Ar vertex energy in the laboratory frame shown for multiple center-of-mass scattering angles ($\theta_{cm}$).}
+\small{\textbf{Fig 8.} Unnormalized excitations functions as a function of the $^{40}$Ar vertex energy in the laboratory frame shown for multiple center-of-mass scattering angles ($\theta_{cm}$).}
 }
 
 %----------------------------------------------------------------------------------------
@@ -159,8 +160,8 @@ I will be continuing my work with AT-TPC data and the analysis process this seme
 %----------------------------------------------------------------------------------------
 \headerbox{References}{name=references,column=0,above=bottom,span=1}{
 \footnotesize{\bibliographystyle{unsrt}
-\hspace{.05cm}
-\itemsep-0.5em
+\hspace{-2.00cm}
+%\itemsep-0.5em
 \bibliography{bibliography.bib}}
 }
 %----------------------------------------------------------------------------------------
@@ -169,7 +170,7 @@ I will be continuing my work with AT-TPC data and the analysis process this seme
 \headerbox{The pytpc Framework}{name=pytpc,column=0,row=2, above=references, below=motivation}
 {\small{The pytpc framework is a Python package for analyzing AT-TPC data. The package provides functions for reconstructing, cleaning, and fitting particle tracks produced by beam experiments run on the AT-TPC. Analysis of AT-TPC data is a multi-step process:
 
-\begin{enumerate}
+\begin{enumerate}\itemsep-0.05em
 \item Baseline Correction for Electronics Signals
 \item Track Reconstruction
 \item Removal of Noise Using a Hough Transform
@@ -177,18 +178,13 @@ I will be continuing my work with AT-TPC data and the analysis process this seme
 \end{enumerate}
 
 \begin{center}
-\includegraphics [width=21mm] {preprocess_evt.pdf}
-\hspace{.3cm}
-\includegraphics [width=21mm] {clean_evt.pdf}
-\hspace{.3cm}
-\includegraphics [width=21mm] {fit_evt.pdf}
+\includegraphics [width=30mm] {preprocess_evt.pdf}
+\hspace{3cm}
+\includegraphics [width=30mm] {clean_evt.pdf}
+\hspace{0cm}
+\includegraphics [width=30mm] {fit_evt.pdf}
 \end{center}
-\textbf{Figure 4.} From left to right,  here are examples of a preprocessed event, an event after the Hough Transform cleaning, and a Monte Carlo fit event.}
-
-%\begin{center}
-%\includegraphics [height=40mm] {documentation.png}
-%\end{center}
-
+\textbf{Fig 4.} A preprocessed event (top), an event after the Hough Transform cleaning (bottom left), and a Monte Carlo fit event (bottom right).}
 } 
 
 
