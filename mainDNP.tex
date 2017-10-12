@@ -111,12 +111,12 @@ In order to obtain this ${4\pi}$ coverage with high resolution, a highly segment
 %----------------------------------------------------------------------------------------
 \headerbox{Motivation}
 {name=motivation,column=0,row=1,span=1, below=abstract}
-{\small{WHY DO WE STUDY RARE ISOTOPES. Rare isotope beams typically have low intensity, leading to fewer reactions and events, thus requiring a detector with high efficiency. The AT-TPC was designed and built for improved data acquisition in rare isotope experiments. \textbf{We are interested in studying the structure of rare isotopes and do so by calculating excitation functions or differential cross sections. This detector allows us to measure excitation functions over a large energy range, as the gas target allows reactions to occur anywhere in the chamber.}
+{\small{We study rare isotopes to expand our understanding of the shell structure of nuclei. The AT-TPC was designed and built for improved data acquisition in rare isotope experiments. Rare isotope beams typically have low intensity, leading to fewer reactions and events, thus requiring a detector with high efficiency. In the AT-TPC, the gas that fills the chamber acts both the detector and target, making the detector highly efficient and allowing measurement of reactions occurring at many energies. We are interested in studying the structure of unbound states of isotopes and do so by calculating excitation functions or differential cross sections. The wide energy variance of the data collected in the AT-TPC enables us to calculate excitation functions for a large range of energies.
 
 This project involved creating an analysis manual and framework documentation to streamline the analysis process for users and increase the accessibility of the software as well as analyzing data from the $^{40}$Ar(p,p) reaction.}
 
 \begin{center}
-\includegraphics[width=30mm]{ar40_p.png}
+\includegraphics[width=40mm]{ar40_p.png}
 \end{center}
 
 \small{\textbf{Fig. 1.} Elastic proton scattering of a $^{40}$Ar nucleus.}
@@ -152,7 +152,14 @@ This project involved creating an analysis manual and framework documentation to
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 \headerbox{Acknowledgements}{name=acknowledgements,column=1,above=bottom,span=2}
-{\small{kjkfljsldljkdgs;kl;sdglkmdlkmdsagkldgslak}
+{\small{This work was supported by NSF grant no. 10049216.\\ Conference funds were supported by the Society of Physics Students.
+}
+
+\includegraphics[height=15mm]{nsf_logo.png}
+\hspace{.75cm}
+\includegraphics [height=15mm]{sps_logo.png}
+
+
 }
 %----------------------------------------------------------------------------------------
 %	CONCLUSION - FUTURE
@@ -160,7 +167,7 @@ This project involved creating an analysis manual and framework documentation to
 \headerbox{Conclusion and Future Work}{name=conclusion,column=1,below=analysis, above=acknowledgements,span=2}
 {\small{By analyzing the data from the $^{40}$Ar experiment I tested the adaptability of the software and examined previously unanalyzed experimental data. The analysis manual for the pytpc framework is now being used by the AT-TPC's many external users.
 
-Currently, I am applying machine learning methods to the issue of event classification for AT-TPC data. Ideally, this will increase statistics and reduce both error and computational time. }
+Currently, I am applying machine learning methods to the issue of event classification for AT-TPC data. Ideally, this will increase statistics and reduce both error and computational time.}
 }
 
 %----------------------------------------------------------------------------------------
@@ -196,7 +203,6 @@ Currently, I am applying machine learning methods to the issue of event classifi
 \end{center}
 \textbf{Fig 4.} A preprocessed event (top), an event after the Hough Transform cleaning (bottom left), and a Monte Carlo fit event (bottom right).}
 } 
-
 
 \end{poster}
 \end{document}
