@@ -228,6 +228,7 @@
 \DeclareOptionX{ansidpaper}    {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{22in}{34in}}%
 %\DeclareOptionX{ansiepaper}    {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{34in}{44in}}%
 \DeclareOptionX{ansiepaper}    {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{36in}{42in}}%
+\DeclareOptionX{ansiepaperDNP}    {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{40in}{46in}}%
 \DeclareOptionX{letterpaper}   {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{8.5in}{11in}}%
 \DeclareOptionX{legalpaper}    {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{8.5in}{14in}}%
 \DeclareOptionX{executivepaper}{\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{7.25in}{10.5in}}%
