@@ -73,29 +73,27 @@ boxshade=plain
 %\Large \it A} % Poster title
 {\vspace{0.3em} \smaller J.Z. Taylor$^1$, J. Bradt$^2$, D. Bazin$^2$, M.P. Kuchera$^1$ \\  % Authors
   
-\smaller $^1$\it{Department of Physics, Davidson College, Davidson, NC 28035} \\
-	     $^2$\it{National Superconducting Cyclotron Laboratory, Michigan State University, East Lansing, MI 48824}}
+\smaller $^1$\it{Department of Physics, Davidson College} \\
+	     $^2$\it{National Superconducting Cyclotron Laboratory, Michigan State University}}
 	    {\includegraphics[scale=0.3]{nscl_logo.png}} % University/lab logo
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 \headerbox{Abstract}{name=abstract,column=0,row=0, span=3}{
-\small{Data-analysis software for the Active-Target Time Projection Chamber (AT-TPC) at the National Superconducting Cyclotron Laboratory (NSCL) was documented and used to analyze unbound states in Argon-40 ($^{40}$Ar). At NSCL, rare isotope beams are produced, accelerated, and delivered to various experimental setups, each with their own physics motivations. One such setup is the AT-TPC, a gas-filled detector that acts as both the detector and target for high-efficiency detection of low-intensity, exotic nuclear reactions. The pytpc framework is a Python package which was used to analyze data produced by the $^{40}$Ar(p, p) experiment. Usage of the package was documented in an analysis manual to aid in the work of future AT-TPC users. Software features and analysis methods in the pytpc framework are presented along with the $^{40}$Ar results.
-
-
-%Data-analysis software for the Active-Target Time Projection Chamber (AT-TPC) at the National Superconducting Cyclotron Laboratory (NSCL) was documented and used to analyze unbound states in Argon-40 ($^{40}$Ar). NSCL is a national user facility funded by the National Science Foundation that provides rare isotope beams to researchers around the world to study cutting-edge nuclear physics phenomena. Rare isotope beams are produced, accelerated, and delivered to various experimental setups, each with their own physics motivations. One such setup is the AT-TPC, a gas-filled detector that acts as both the detector and target for high-efficiency detection of low-intensity, exotic nuclear reactions. The pytpc framework is a Python package for analyzing AT-TPC data and was developed for the analysis of $^{46}$Ar(p, p) data. The existing software was used to analyze data produced by the $^{40}$Ar(p, p) experiment that ran in August, 2015. Usage of the package was documented in an analysis manual both to improve analysis steps and aid in the work of future AT-TPC users. Software features and analysis methods in the pytpc framework will be presented along with the $^{40}$Ar results.
-}
+\small{User-friendly data analysis software has been developed for the Active-Target Time Projection Chamber (AT-TPC) experiment at the National Superconducting Cyclotron Laboratory at Michigan State University. The AT-TPC, commissioned in 2014, is a gas-filled detector that acts as both the detector and target for high-efficiency detection of low-intensity, exotic nuclear reactions. The pytpc framework is a Python package for analyzing AT-TPC data. The package was developed for the analysis of $^{46}$Ar(p, p) data. The existing software was used to analyze data produced by the $^{40}$Ar(p, p) experiment that ran in August, 2015. Usage of the package was documented in an analysis manual both to improve analysis steps and aid in the work of future AT-TPC users. Software features and analysis methods in the pytpc framework will be presented along with the $^{40}$Ar results.}
 }
 %----------------------------------------------------------------------------------------
 %	THE AT-TPC
 %----------------------------------------------------------------------------------------
 \headerbox{The Active-Target Time Projection Chamber}{name=attpc,column=1,row=1,span=2,below=abstract}
 {\small{The AT-TPC is a gas-filled detector that acts as both the detector and target for high-efficiency detection of low-intensity, exotic nuclear reactions. Because the gas target also acts as the detector, the AT-TPC is highly efficient, providing nearly ${4\pi}$ angular coverage. The AT-TPC operates inside a nearly 2 Tesla solenoidal magnetic field. Reactions can be measured over a wide range of energies as the beam loses energy in the gas \cite{ATTPC-NIM}.
-In order to obtain this ${4\pi}$ coverage with high resolution, a highly segmented pad plane captures the detector signal. There are 10240 pads in the pad plane which produces on the order of 10MB of data per event.}
+In order to obtain this ${4\pi}$ coverage with high resolution, a highly segmented pad plane captures the detector signal. There are 10240 pads in the pad plane which produces on the order of 10MB raw of data per event.}
 
 \begin{center}
 \includegraphics [height=30mm]{michigan_trip.jpg} 
+\hspace{0.2cm}
+\includegraphics [height=30mm] {attpc.png}
 \hspace{0.2cm}
 \includegraphics [height=30mm] {attpc.png}
 \end{center}
@@ -103,7 +101,9 @@ In order to obtain this ${4\pi}$ coverage with high resolution, a highly segment
 
 \small{\textbf{Fig 2.} Left, a photograph of the pad plane end of the AT-TPC, shown mounted in the solenoid magnet.}
 
-\small{\textbf{Fig 3.} Right, a schematic of the AT-TPC with the outer shielding made transparent. The rare isotope beam enters the the detector on the right-hand side and moves left towards the sensor plane \cite{Bradt-thesis}.}
+\small{\textbf{Fig 3.} Center, a schematic of the AT-TPC with the outer shielding made transparent. The rare isotope beam enters the the detector on the right-hand side and moves left towards the pad plane \cite{Bradt-thesis}.}
+
+\small{\textbf{Fig 4.} Right, PAD PLANE a plot of the pad plane resolution with a segmented proton event.}
 
 }
 %----------------------------------------------------------------------------------------
@@ -111,15 +111,15 @@ In order to obtain this ${4\pi}$ coverage with high resolution, a highly segment
 %----------------------------------------------------------------------------------------
 \headerbox{Motivation}
 {name=motivation,column=0,row=1,span=1, below=abstract}
-{\small{The study of rare isotopes has applications ranging far beyond the quest for universal discovery, from national security to medicine. Experimental endeavors using low-intensity beams of radioactive ions introduce unique challenges in experimental design and analysis. Rare isotope beams typically have low intensity, leading to fewer reactions and events, thus requiring a detector with high efficiency. The AT-TPC was designed and built for improved data acquisition for rare isotope experiments. 
+{\small{WHY DO WE STUDY RARE ISOTOPES. Rare isotope beams typically have low intensity, leading to fewer reactions and events, thus requiring a detector with high efficiency. The AT-TPC was designed and built for improved data acquisition in rare isotope experiments. \textbf{We are interested in studying the structure of rare isotopes and do so by calculating excitation functions or differential cross sections. This detector allows us to measure excitation functions over a large energy range, as the gas target allows reactions to occur anywhere in the chamber.}
 
 This project involved creating an analysis manual and framework documentation to streamline the analysis process for users and increase the accessibility of the software as well as analyzing data from the $^{40}$Ar(p,p) reaction.}
 
 \begin{center}
-\includegraphics[width=18mm]{ar40_nucleus.png}
+\includegraphics[width=30mm]{ar40_p.png}
 \end{center}
 
-\small{\textbf{Fig. 1.} A schematic diagram of an $^{40}$Ar nucleus, which has 18 protons (red) and 22 neutrons (blue).}
+\small{\textbf{Fig. 1.} Elastic proton scattering of a $^{40}$Ar nucleus.}
 }
 %----------------------------------------------------------------------------------------
 %	40AR ANALYSIS
@@ -132,15 +132,15 @@ This project involved creating an analysis manual and framework documentation to
 \includegraphics[height=30mm]{chamber_plot.png}
 \hspace{.75cm}
 \includegraphics [height=30mm] {chi2pos.pdf}
-\hspace{.75cm}
-\includegraphics [height=30mm] {vertex_pos_distrib.pdf}
+%\hspace{.75cm}
+%\includegraphics [height=30mm] {}
 \end{center}
 
 \small{\textbf{Fig 5.} Left, an example of a proton event rendered in the pytpc framework.}
 
 \small{\textbf{Fig 6.} Center, the distribution of $\chi_{pos}^{2}$ values. Events falling above the threshold of 14 were discarded.}
 
-\small{\textbf{Fig 7.} Right, overall distribution of vertex positions in the plane transverse to the detector.}
+\small{\textbf{Fig 7.} Right, NEW FIGURE}
 
 \begin{center}
 \includegraphics [width=95mm] {angular_excitation_hists_POSTER.pdf}
@@ -149,13 +149,20 @@ This project involved creating an analysis manual and framework documentation to
 }
 
 %----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+\headerbox{Acknowledgements}{name=acknowledgements,column=1,above=bottom,span=2}
+{\small{kjkfljsldljkdgs;kl;sdglkmdlkmdsagkldgslak}
+}
+%----------------------------------------------------------------------------------------
 %	CONCLUSION - FUTURE
 %----------------------------------------------------------------------------------------
-\headerbox{Conclusion and Future Work}{name=conclusion,column=1,below=analysis,span=2}
-{\small{ By analyzing the data from the $^{40}$Ar experiment I tested the adaptability of the software and examined previously unused experimental data. The analysis manual for the pytpc framework will help experimentalists from around the world apply pytpc to data produced by their own AT-TPC experiments.
+\headerbox{Conclusion and Future Work}{name=conclusion,column=1,below=analysis, above=acknowledgements,span=2}
+{\small{By analyzing the data from the $^{40}$Ar experiment I tested the adaptability of the software and examined previously unanalyzed experimental data. The analysis manual for the pytpc framework is now being used by the AT-TPC's many external users.
 
-I will be continuing my work with AT-TPC data and the analysis process this semester in a more research-focused capacity. My research will explore and apply machine learning methods to the issue of event classification for AT-TPC data. Ideally, this will increase statistics and reduce both error and computational time. }
+Currently, I am applying machine learning methods to the issue of event classification for AT-TPC data. Ideally, this will increase statistics and reduce both error and computational time. }
 }
+
 %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
@@ -169,16 +176,18 @@ I will be continuing my work with AT-TPC data and the analysis process this seme
 %	PYTPC
 %----------------------------------------------------------------------------------------
 \headerbox{The pytpc Framework}{name=pytpc,column=0,row=2, above=references, below=motivation}
-{\small{The pytpc framework is a Python package for analyzing AT-TPC data. The package provides functions for reconstructing, cleaning, and fitting particle tracks produced by beam experiments run on the AT-TPC. Analysis of AT-TPC data is a multi-step process:
+{\small{The pytpc framework is a Python package for analyzing AT-TPC data. The package provides functions for reconstructing, cleaning, and fitting particle tracks produced in the AT-TPC. Analysis of AT-TPC data is a multi-step process:
 
 \begin{enumerate}\itemsep-0.04em
 \item Baseline Correction for Electronics Signals
 \item Track Reconstruction
-\item Removal of Noise Using a Hough Transform
+\item Noise Removal
 \item Modeling and Fitting Tracks with a Monte Carlo Optimizer
 \end{enumerate}
 
 \begin{center}
+\includegraphics [width=30mm] {preprocess_evt.pdf}
+\hspace{0cm}
 \includegraphics [width=30mm] {preprocess_evt.pdf}
 \hspace{3cm}
 \includegraphics [width=30mm] {clean_evt.pdf}
