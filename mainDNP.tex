@@ -76,7 +76,7 @@ boxshade=plain
   
 \smaller $^1$\it{Department of Physics, Davidson College} \\
 	     $^2$\it{National Superconducting Cyclotron Laboratory, Michigan State University}}
-	    {\includegraphics[scale=0.3]{nscl_logo.png}} % University/lab logo
+	    {\includegraphics [scale=0.3]{nscl_logo.png}} % University/lab logo
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
@@ -112,12 +112,12 @@ In order to obtain this ${4\pi}$ coverage with high resolution, a highly segment
 %----------------------------------------------------------------------------------------
 \headerbox{Motivation}
 {name=motivation,column=0,row=1,span=1, below=abstract}
-{\small{We study rare isotopes to expand our understanding of the shell structure of nuclei. By performing elastic scattering experiments, we can look for unbound states of isotopes by calculating excitation functions. The AT-TPC was designed and built for improved data acquisition in rare isotope experiments. Rare isotope beams typically have low intensity, leading to fewer reactions and events, thus requiring a detector with high efficiency. In the AT-TPC, the gas that fills the chamber acts both the detector and target, making the detector highly efficient and allowing measurement of reactions occurring at many energies. The wide energy variance of the data collected in the AT-TPC enables us to calculate excitation functions for a large range of energies.
+{\small{We study rare isotopes to expand our understanding of the shell structure of nuclei. By performing elastic scattering experiments, we can look for unbound states of isotopes by calculating excitation functions. The AT-TPC was designed and built for improved data acquisition in rare isotope experiments. Rare isotope beams typically have low intensity, leading to fewer reactions and events, thus requiring a detector with high efficiency. In the AT-TPC, the gas that fills the chamber acts both the detector and target, making the detector highly efficient and allowing measurement of reactions occurring at many energies. The data collected in the AT-TPC enables us to calculate excitation functions for a large range of energies.
 
 This project involved creating an analysis manual and framework documentation to streamline the analysis process for users and increase the accessibility of the software as well as analyzing data from the $^{40}$Ar(p,p) reaction.}
 
 \begin{center}
-\includegraphics[width=40mm]{ar40_p.png}
+\includegraphics [width=42mm]{ar40_p.png}
 \end{center}
 
 \small{\textbf{Fig. 1.} Elastic proton scattering of a $^{40}$Ar nucleus.}
@@ -130,7 +130,7 @@ This project involved creating an analysis manual and framework documentation to
 \small{The Monte Carlo fit results provide the vertex position of a reaction in the detector chamber. The energy of the beam particle at this location can be found by calculating the energy lost by the particle to the gas target that fills the chamber.}
 
 \begin{center}
-\includegraphics[height=35mm]{NSCL_schematic.png}
+\includegraphics [height=35mm]{NSCL_schematic.png}
 \hspace{.5cm}
 \includegraphics [height=35mm] {chamber_plot.png}
 \hspace{.5cm}
@@ -189,19 +189,19 @@ Currently, I am applying machine learning methods to the issue of event classifi
 \item Baseline Correction for Electronics Signals
 \item Track Reconstruction
 \item Noise Removal
-\item Modeling and Fitting Tracks with a Monte Carlo Optimizer
+\item Fitting Tracks with a Monte Carlo Optimizer
 \end{enumerate}
 
 \begin{center}
-\includegraphics [width=30mm] {preprocess_evt.pdf}
+\includegraphics [height=25mm] {preprocess_evt.pdf}
 \hspace{0cm}
-\includegraphics [width=30mm] {preprocess_evt.pdf}
+\includegraphics [height=25mm] {clean_evtDNP.pdf}
 \hspace{3cm}
-\includegraphics [width=30mm] {clean_evt.pdf}
+\includegraphics [height=30mm] {fit_evt_xyDNP.pdf}
 \hspace{0cm}
-\includegraphics [width=30mm] {fit_evt.pdf}
+\includegraphics [height=30mm] {fit_evt_zyDNP.pdf}
 \end{center}
-\textbf{Fig 4.} A preprocessed event (top), an event after the Hough Transform cleaning (bottom left), and a Monte Carlo fit event (bottom right).}
+\textbf{Fig 4.} A preprocessed event in uv (top left), a cleaned event in xy (top right), a fit event in xy (bottom left), and a fit event in zy (bottom right).}
 } 
 
 \end{poster}
