@@ -31,6 +31,7 @@
 \usepackage{textcomp}
 \usepackage{multicol}
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
+\usepackage[export]{adjustbox}
 
 \graphicspath{{figures/}} % Directory in which figures are stored
 
@@ -129,18 +130,18 @@ This project involved creating an analysis manual and framework documentation to
 \small{The Monte Carlo fit results provide the vertex position of a reaction in the detector chamber. The energy of the beam particle at this location can be found by calculating the energy lost by the particle to the gas target that fills the chamber.}
 
 \begin{center}
-\includegraphics[height=35mm]{chamber_plot.png}
+\includegraphics[height=35mm]{NSCL_schematic.png}
+\hspace{.5cm}
+\includegraphics [height=35mm] {chamber_plot.png}
 \hspace{.5cm}
 \includegraphics [height=35mm] {chi2pos.pdf}
-\hspace{.5cm}
-\includegraphics [height=35mm] {nscl_schematic.png}
 \end{center}
 
-\small{\textbf{Fig 5.} Left, an example of a proton event rendered in the pytpc framework.}
+\small{\textbf{Fig 5.} Left, the NSCL beamline with labels. Regions 1-4, 9, and 14 (the AT-TPC) are used in our experiments.}
 
-\small{\textbf{Fig 6.} Center, the distribution of $\chi_{pos}^{2}$ values. Events falling above the threshold of 14 were discarded.}
+\small{\textbf{Fig 6.} Center, an example of a proton event rendered in the pytpc framework.}
 
-\small{\textbf{Fig 7.} Right, NSCL beamline}
+\small{\textbf{Fig 7.} Right, the distribution of $\chi_{pos}^{2}$ values. Events falling above the threshold of 14 were discarded.}
 
 \begin{center}
 \includegraphics [width=95mm] {angular_excitation_hists_POSTER.pdf}
@@ -155,10 +156,9 @@ This project involved creating an analysis manual and framework documentation to
 {\small{This work was supported by NSF grant no. 10049216.\\ Conference funds were supported by the Society of Physics Students.
 }
 
-\includegraphics[height=15mm]{nsf_logo.png}
-\hspace{.75cm}
+\includegraphics [height=15mm]{nsf_logo.png}
+%\hspace{.75cm}
 \includegraphics [height=15mm]{sps_logo.png}
-
 
 }
 %----------------------------------------------------------------------------------------
