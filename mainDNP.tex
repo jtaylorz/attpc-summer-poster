@@ -19,7 +19,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[ansiepaperDNP,portrait]{baposter}
+\documentclass[ansiepaperDNP,portrait]{baposterDNP}
 
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{booktabs} % Horizontal rules in tables
@@ -32,7 +32,7 @@
 \usepackage{multicol}
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
 \usepackage[export]{adjustbox}
-
+\usepackage{tabularx} % MPK
 \graphicspath{{figures/}} % Directory in which figures are stored
 
  %\definecolor{bordercol}{RGB}{40,40,40} % Border color of content boxes
@@ -92,13 +92,13 @@ boxshade=plain
 In order to obtain this ${4\pi}$ coverage with high resolution, a highly segmented pad plane captures the detector signal. There are 10240 pads in the pad plane which produces on the order of 10MB raw of data per event.}
 
 \begin{center}
-\includegraphics [height=30mm]{michigan_trip.jpg} 
-\hspace{0.2cm}
-\includegraphics [height=30mm] {attpc.png}
-\hspace{0.2cm}
-\includegraphics [height=30mm] {padplane.png}
+\includegraphics [height=35mm]{michigan_trip.jpg} 
+\hspace{0.5cm}
+\includegraphics [height=35mm] {attpc.png}
+\hspace{0.5cm}
+\includegraphics [height=35mm] {padplane.png}
 \end{center}
-
+\vspace{-1em}
 
 \small{\textbf{Fig 2.} Left, a photograph of the pad plane end of the AT-TPC, shown mounted in the solenoid magnet.}
 
@@ -112,15 +112,18 @@ In order to obtain this ${4\pi}$ coverage with high resolution, a highly segment
 %----------------------------------------------------------------------------------------
 \headerbox{Motivation}
 {name=motivation,column=0,row=1,span=1, below=abstract}
-{\small{We study rare isotopes to expand our understanding of the shell structure of nuclei. By performing elastic scattering experiments, we can look for unbound states of isotopes by calculating excitation functions. The AT-TPC was designed and built for improved data acquisition in rare isotope experiments. Rare isotope beams typically have low intensity, leading to fewer reactions and events, thus requiring a detector with high efficiency. In the AT-TPC, the gas that fills the chamber acts both the detector and target, making the detector highly efficient and allowing measurement of reactions occurring at many energies. The data collected in the AT-TPC enables us to calculate excitation functions for a large range of energies.
-
-This project involved creating an analysis manual and framework documentation to streamline the analysis process for users and increase the accessibility of the software as well as analyzing data from the $^{40}$Ar(p,p) reaction.}
+{\small{We study rare isotopes to expand our understanding of the shell structure of nuclei. By performing elastic scattering experiments, we can look for unbound states of isotopes by calculating excitation functions. The AT-TPC was designed and built for improved data acquisition in rare isotope experiments. Rare isotope beams typically have low intensity, leading to fewer reactions and events, thus requiring a detector with high efficiency. In the AT-TPC, the gas that fills the chamber acts as both the detector and target, making the detector highly efficient and allowing measurement of reactions occurring at many energies. %The data collected in the AT-TPC enables us to calculate excitation functions for a large range of energies.
 
 \begin{center}
 \includegraphics [width=42mm]{ar40_p.png}
 \end{center}
+\vspace{-.8em}
 
-\small{\textbf{Fig. 1.} Elastic proton scattering of a $^{40}$Ar nucleus.}
+\small{\textbf{Fig. 1.} Elastic proton scattering of a $^{40}$Ar nucleus.} \\
+
+
+This project involved creating an analysis manual and framework documentation to streamline the analysis process for users and increase the accessibility of the software as well as analyzing data from the $^{40}$Ar(p,p) reaction.}
+
 }
 %----------------------------------------------------------------------------------------
 %	40AR ANALYSIS
@@ -136,6 +139,7 @@ This project involved creating an analysis manual and framework documentation to
 \hspace{.5cm}
 \includegraphics [height=35mm] {chi2pos.pdf}
 \end{center}
+\vspace{-1em}
 
 \small{\textbf{Fig 5.} Left, the NSCL beamline with labels. Regions 1-4, 9, and 14 (the AT-TPC) are used in our experiments.}
 
@@ -144,8 +148,9 @@ This project involved creating an analysis manual and framework documentation to
 \small{\textbf{Fig 7.} Right, the distribution of $\chi_{pos}^{2}$ values. Events falling above the threshold of 14 were discarded.}
 
 \begin{center}
-\includegraphics [width=95mm] {angular_excitation_hists_POSTER.pdf}
+\includegraphics [width=105mm] {angular_excitation_hists_POSTER.pdf}
 \end{center}
+\vspace{-1em}
 \small{\textbf{Fig 8.} Unnormalized excitation functions as a function of the $^{40}$Ar vertex energy in the laboratory frame shown for multiple center-of-mass scattering angles ($\theta_{cm}$).}
 }
 
@@ -153,13 +158,21 @@ This project involved creating an analysis manual and framework documentation to
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 \headerbox{Acknowledgements}{name=acknowledgements,column=1,above=bottom,span=2}
-{\small{This work was supported by NSF grant no. 10049216.\\ Conference funds were supported by the Society of Physics Students.
-}
+{
+\begin{minipage}{0.7\textwidth}
+\vspace{-1em}
+\small{This work was supported by NSF grant no. 10049216.}\\\small{Conference travel was funded by a Society of Physics Students Travel Award.} 
+\vspace{-1em}
 
-\includegraphics [height=15mm]{nsf_logo.png}
-%\hspace{.75cm}
-\includegraphics [height=15mm]{sps_logo.png}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+%\vspace{1em}
+ \includegraphics [height=14mm]{nsf_logo.png} 
+ \hspace{.75cm}
+  \includegraphics [height=14mm]{sps_logo.png} \\
+  \vspace{-1em}
 
+\end{minipage}
 }
 %----------------------------------------------------------------------------------------
 %	CONCLUSION - FUTURE
@@ -193,14 +206,15 @@ Currently, I am applying machine learning methods to the issue of event classifi
 \end{enumerate}
 
 \begin{center}
-\includegraphics [height=25mm] {preprocess_evt.pdf}
+\includegraphics [height=28mm] {preprocess_evt.pdf}
 \hspace{0cm}
-\includegraphics [height=25mm] {clean_evtDNP.pdf}
+\includegraphics [height=28mm] {clean_evtDNP.pdf}
 \hspace{3cm}
-\includegraphics [height=30mm] {fit_evt_xyDNP.pdf}
+\includegraphics [height=33mm] {fit_evt_xyDNP.pdf}
 \hspace{0cm}
-\includegraphics [height=30mm] {fit_evt_zyDNP.pdf}
+\includegraphics [height=33mm] {fit_evt_zyDNP.pdf}
 \end{center}
+\vspace{-1em}
 \textbf{Fig 4.} A preprocessed event in uv (top left), a cleaned event in xy (top right), a fit event in xy (bottom left), and a fit event in zy (bottom right).}
 } 
 
